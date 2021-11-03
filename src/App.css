@@ -1,55 +1,62 @@
 .App {
   text-align: center;
+ 
 }
 
 .Header {
+  display: grid;
+  grid-template-columns: 50% 50%;
   width: 100%;
-  height: 100px;
-  display: inline-flex;
+  height: 110px;
   background-color: #426770;
 }
 
-.Navigation {
-  display: inline-block;
-  position: relative;
-  background-color: rgb(196, 196, 196, .5);
-  border-radius: 3%;
-  width: 600px;
-  align-content: center;
-  margin-left: 500px;
+.displayName {
+  display: inline-flex;
+  color: white;
+  margin-top: 30px;
 }
 
-#innertext {
-  display: inline-flex;
+.Navigation {
+  position: relative;
+  margin: 0 auto;
+}
 
+.innerLink {
+  display: inline-flex;
   color: white;
+  padding: 20px;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.navbar {
+  margin-top: 5px;
+}
+.leftHead {
+  color: white;
+  display: inline-flex;
+  justify-content: baseline;
+  text-align: left;
+  grid-column: 1;
+  position: relative;
 }
 
 .rightHead {
+  color: white;
   display: inline-flex;
-  position: absolute;
-  align-items: center;
-  margin-left: -700px;
-  margin-top: -5px;
-}
-
-.Nav {
-  display: inline-flex;
+  text-align: right;
   position: relative;
-  justify-content: space-between;
-  gap: 50px;
-  margin-left: -25px;
-}
-
-.navelement {
-  list-style: none;
+  grid-column: 2;
 }
 
 .mainLogo {
+  display: grid;
+  grid-column: 1;
   height: 100px;
   width: 140px;
 }
 
-.Header {
-  display: inline-block;
+.bodyPage {
+  
 }

@@ -12,32 +12,17 @@ function Weather() {
 		description: '',
 	});
 	const [zipCode, setZipCode] = useState('');
-	// const [country, setCountry] =useState('')
 
-	const [countryCode, setCountryCode] = useState('');
-
-	const handleCountryCode = (e) => {
-		e.preventDefault();
-		setCountryCode(e.target.value);
-	};
 
 	const handleZipCode = (e) => {
 		e.preventDefault();
 		setZipCode(e.target.value);
 	};
-	// const handleCountry = (e) => {
-	// 	e.preventDefault();
-	// 	setCountry(e.target.value);
-	// };
-
+	
 	const weatherInfo = (e) => {
 		e.preventDefault();
 		fetch(
-			'http://api.openweathermap.org/data/2.5/weather?q=' +
-				zipCode +
-				countryCode +
-				'&units=imperial&appid=' +
-				API_KEY
+			'http://api.openweathermap.org/data/2.5/weather?zip=' + zipCode + '&units=imperial&appid=' + API_KEY
 		)
 			.then((response) => response.json())
 			.then((data) => {
@@ -55,7 +40,7 @@ function Weather() {
 
 	if (zipCodeWeather.humidity === '') {
 		return (
-			<div className='App'>
+			<div className='forecast'>
 				<h1 className='head'> Weather Forecast </h1>
 				<form className='form' onSubmit={weatherInfo}>
 					<input
@@ -65,14 +50,6 @@ function Weather() {
 						value={zipCode}
 						name='zipCode'
 						placeholder='Enter a ZipCode'
-					/>
-					<input
-						className='country'
-						onChange={handleCountryCode}
-						type='text'
-						value={countryCode}
-						name='country'
-						placeholder='Enter Country Code'
 					/>
 
 					<button id='button' className='btn btn-primary'>
@@ -95,15 +72,7 @@ function Weather() {
 						name='city'
 						placeholder='Enter a City'
 					/>
-					<input
-						className='country'
-						onChange={handleCountryCode}
-						type='text'
-						value={countryCode}
-						name='country'
-						placeholder='Enter Country Code'
-					/>
-
+					
 					<button id='button' className='btn btn-primary'>
 						{' '}
 						Search{' '}
