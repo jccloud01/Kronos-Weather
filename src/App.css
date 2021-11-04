@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
  
@@ -57,6 +58,117 @@
   width: 140px;
 }
 
-.bodyPage {
+#homeImg {
+  width: 100%;
+  height: 100%;
+  position: center;
+  margin: 0 auto;
+
+}
+
+#button {
+  display: inline-flex;
+  color: white;
+  background-color: #22463e;
+  padding: 20px;
+  width: 250px;
+  justify-content: center;
+  margin-top: 350px;
+  align-items: center;
+}
+
+.homeElement {
+  display: block;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  /* background-image: url("/Users/jules/Desktop/seir/unit2/kronos-weather/src/useables/Homepage.jpg"); */
+  background-size: cover;
+
+}
+.forecast {
+  display: inline-block;
+  background-color: #2d4d55;
+  border-color: black;
+  justify-content: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 10%;
+
+}
+
+.form {
+  align-content: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#weatherButton {
+  height: 60px;
+  width: 150px;
+  background-color: #8ca5ac;
+  position: relative;
+}
+
+.ForecastDisplay {
+  display: inline-block;
+  justify-content: center;
+  padding: 40px;
   
+}
+
+.data {
+  padding: 10px;
+  display: inline-block;
+  background-color: rgb(223, 250, 246);
+  height: 350px;
+  width: 200px;
+  border-radius: 5%;
+}
+.titleForecast {
+  font-family: 'Kalam', cursive;
+  color: black;
+  font-size: 35px;
+}
+
+
+.FormForecast {
+  display: inline-block;
+  padding: 50px;
+  width: 400px;
+  height: 60px;
+
+}
+.title {
+  font-family: 'Kalam', cursive;
+  color: aliceblue;
+  font-size: 35px;
+}
+.city {
+  font-family: 'Roboto Mono', monospace;
+
+}
+
+.zipCode {
+  position: relative;
+  padding: 10px;
+  text-align: center;
+  height: 40px;
+  width: 250px;
+  border-radius: 5%;
+}
+
+.date, 
+.weather,
+.temperature {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px;
+}
+.date {
+  color: rgb(18, 39, 56);
+  padding: 20px;
 }

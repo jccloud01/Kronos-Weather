@@ -1,18 +1,13 @@
 import Weather from "./Weather";
-import Reminder from "./Reminder";
-import "./components.css";
-import Homepage from './useables/Homepage.jpg'
+import "./App.css";
 
 function homeDisplay() {
 	return (
-		<div>
-		<div className="background">
-			<img src={Homepage} alt="serene-mountain" ></img>
-		</div>
-		<div className='bodyPage'>
-			<Weather />
-			<Reminder />
-		</div>
+		<div className="homeDisplayed">
+			<div className='DisplayElement'>
+				<h1> Hello </h1>
+				<Weather />
+			</div>
 		</div>
 		
 	);

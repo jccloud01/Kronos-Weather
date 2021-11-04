@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+import iconDisplay from './iconDisplay';
 
 function Weather() {
 	const API_KEY = 'cd09d8ac9a0ef1574b474e68f204b38a';
@@ -7,87 +8,122 @@ function Weather() {
 	const [zipCodeWeather, setZipCodeWeather] = useState({
 		city: '',
 		temp: '',
-		humidity: '',
+		id: '',
+		date: '',
 		weather: '',
 		description: '',
 	});
 	const [zipCode, setZipCode] = useState('');
 
-
 	const handleZipCode = (e) => {
 		e.preventDefault();
 		setZipCode(e.target.value);
 	};
+
 	
 	const weatherInfo = (e) => {
 		e.preventDefault();
 		fetch(
-			'http://api.openweathermap.org/data/2.5/weather?zip=' + zipCode + '&units=imperial&appid=' + API_KEY
+			'http://api.openweathermap.org/data/2.5/forecast?zip=' + zipCode + '&units=imperial&appid=' + API_KEY
 		)
 			.then((response) => response.json())
 			.then((data) => {
 				console.log(data);
 				setZipCodeWeather({
-					city: data.name,
-					temp: data.main.temp,
-					humidity: data.main.humidity,
-					weather: data.weather[0].main,
-					description: data.weather[0].description,
+					city: data.city.name,
+
+					date: data.list[2].dt_txt,
+					id: data.list[2].weather[0].id,
+					temp: data.list[2].main.temp,
+					weather: data.list[2].weather[0].description,
+
+					date2: data.list[10].dt_txt,
+					id2: data.list[2].weather[0].id,
+					temp2: data.list[10].main.temp,
+					weather2: data.list[10].weather[0].description,
+
+					date3: data.list[18].dt_txt,
+					id3: data.list[2].weather[0].id,
+					temp3: data.list[18].main.temp,
+					weather3: data.list[18].weather[0].description,
+
+					date4: data.list[26].dt_txt,
+					id4: data.list[2].weather[0].id,
+					temp4: data.list[26].main.temp,
+					weather4: data.list[26].weather[0].description,
+
+					date5: data.list[34].dt_txt,
+					id5: data.list[2].weather[0].id,
+					temp5: data.list[34].main.temp,
+					weather5: data.list[34].weather[0].description,
 				});
-			});
 		console.log(zipCodeWeather);
-	};
+		})
+	}
 
-	if (zipCodeWeather.humidity === '') {
-		return (
-			<div className='forecast'>
-				<h1 className='head'> Weather Forecast </h1>
-				<form className='form' onSubmit={weatherInfo}>
-					<input
-						className='zipCode'
-						onChange={handleZipCode}
-						type='text'
-						value={zipCode}
-						name='zipCode'
-						placeholder='Enter a ZipCode'
-					/>
 
-					<button id='button' className='btn btn-primary'>
-						{' '}
-						Search{' '}
-					</button>
-				</form>
-			</div>
-		);
-	} else {
 		return (
-			<div className='forecast'>
-				<h1 className='forecastInput'> Weather Forecast </h1>
-				<form className='form' onSubmit={weatherInfo}>
-					<input
-						className='city'
-						onChange={handleZipCode}
-						type='text'
-						value={zipCode}
-						name='city'
-						placeholder='Enter a City'
-					/>
-					
-					<button id='button' className='btn btn-primary'>
-						{' '}
-						Search{' '}
-					</button>
-				</form>
-				<div>
-					<h1 className='city'> {zipCodeWeather.city} </h1>
-					<h2 className='temperature'> {zipCodeWeather.temp} </h2>
-					<h2 className='humidity'> {zipCodeWeather.humidity}% </h2>
-					<h2 className='weather'> {zipCodeWeather.weather} </h2>
-					<h2 className='description'> {zipCodeWeather.description} </h2>
+			<div className='WeatherComponent'>
+				<div className='FormForecast'>
+					<h1 className='title'> Check Your Forecast... </h1>
+					<form className='form' onSubmit={weatherInfo}>
+						<input
+							className='zipCode'
+							onChange={handleZipCode}
+							type='text'
+							value={zipCode}
+							name='city'
+							placeholder='Enter a ZipCode'
+						/>
+						<br />
+						<button id='weatherButton' className='btn btn-primary'>
+							{' '}
+							Search{' '}
+						</button>
+					</form>
+				</div>
+				<div className='ForecastDisplay'>
+					<div className='forecast'>
+						<h1 className='titleForecast'> Weather Forecast </h1>
+						<h1 className='titleForecast'> Forecast for... {zipCodeWeather.city} </h1>
+						<div className='data'>
+							<h1 className='date'> {zipCodeWeather.date} </h1>
+							
+
+							<h2 className='temperature'> {zipCodeWeather.temp} </h2>
+							<h2 className='weather'> {zipCodeWeather.weather} </h2>
+						</div>
+						<div className='data'>
+							<h1 className='date'> {zipCodeWeather.date2} </h1>
+							<h2 className='temperature'> {zipCodeWeather.temp2} </h2>
+							<h2 className='weather'> {zipCodeWeather.weather2} </h2>
+						</div>
+						<div className='data'>
+							<h1 className='date'> {zipCodeWeather.date3} </h1>
+
+
+							<h2 className='temperature'> {zipCodeWeather.temp3} </h2>
+							<h2 className='weather'> {zipCodeWeather.weather3} </h2>
+						</div>
+						<div className='data'>
+							<h1 className='date'> {zipCodeWeather.date4} </h1>
+
+							<img src={iconDisplay.icon} alt={iconDisplay.alt} />
+
+							<h2 className='temperature'> {zipCodeWeather.temp4} </h2>
+							<h2 className='weather'> {zipCodeWeather.weather4} </h2>
+						</div>
+						<div className='data'>
+							<h1 className='date'> {zipCodeWeather.date5} </h1>
+
+
+							<h2 className='temperature'> {zipCodeWeather.temp5} </h2>
+							<h2 className='weather'> {zipCodeWeather.weather5} </h2>
+						</div>
+					</div>
 				</div>
 			</div>
 		);
-	}
 }
 
 export default Weather;
