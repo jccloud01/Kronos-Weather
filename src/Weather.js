@@ -1,6 +1,5 @@
 import './App.css';
 import { useState } from 'react';
-import iconData from './iconData';
 import cloudImg from './icons/cloudImg.png'
 
 

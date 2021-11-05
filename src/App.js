@@ -6,8 +6,6 @@ import homeDisplay from './homeDisplay';
 import Landing from './Landing';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import quotes from './Quotes';
-import Weather from './Weather';
-
 
 
 function App() {
