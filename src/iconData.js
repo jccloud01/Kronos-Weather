@@ -1,45 +1,66 @@
-import { useState } from "react";
-import Weather from "./Weather";
+// import homeDisplay from "./homeDisplay";
+// import Weather from "./Weather";
 
+// function iconData() {
 
-function iconDisplay() {
+    
 
-    const [weatherIcon, setWeatherIcon] = useState('');
+//     const dataArr = [
 
-    const handleWeatherIcon = (e) => {
-        e.preventDefault();
-        const id = (e.target.value)
-    }
+//     {
+//         icon: "01d", 
+//         img:'./icons/clearsky.png' ,
+//         alt:'clear sky'
+//     },
 
-    const iconData = [
+//     { 
+//         icon: "02d", 
+//         img:'./icons/fewclouds.png', 
+//         alt:'few clouds'
+//     },
 
-        
-        { icon: "01d", src:'./icons/clearsky.png' ,alt:'clear sky'},
+//     { 
+//         icon: "03d", 
+//         img:'./icons/scatteredclouds.png', 
+//         alt:'scattered clouds'
+//     },
 
-        { icon: "02d", src:'./icons/fewclouds.png', alt:'few clouds'},
+//     { 
+//         icon: "04d", 
+//         img:'./icons/brokenclouds.png', 
+//         alt:'broken clouds'},
 
-        { icon: "03d", src:'./icons/scatteredclouds.png', alt:'scattered clouds'},
+//     { 
+//         icon: "09d", 
+//         img:'./icons/showerrain.png', 
+//         alt:'shower rain'
+//     },
 
-        { icon: "04d", src:'./icons/brokenclouds.png', alt:'broken clouds'},
+//     { 
+//         icon: "10d", 
+//         img:'./icons/rain.png', 
+//         alt:'rain' },
 
-        { icon: "09d", src:'./icons/showerrain.png', alt:'shower rain'},
+//     { 
+//         icon: "11d", 
+//         img:'./icons/thunderstorm.png', 
+//         alt: 'thunderstorm'
+//     },
 
-        { icon: "10d", src:'./icons/rain.png', alt:'rain' },
+//     {  
+//         icon: "13d", 
+//         img:'./icons/snow.png', 
+//         alt: 'snow'
+//     },
 
-        { icon: "11d", src:'./icons/thunderstorm.png', alt: 'thunderstorm'},
+//     { 
+//         icon: "50d", 
+//         img:'./icons/mist.png', 
+//         alt: 'mist'
+//     },
+//     ]
+//     return
 
-        { icon: "13d", src:'./icons/snow.png', alt: 'snow'},
+// }
 
-        { icon: "50d", src:'./icons/mist.png', alt: 'mist'},
-
-];
-
-
-    return (
-        <div> </div>
-    )
-}
-
-
-
-export default iconDisplay;
+// export default iconData;

@@ -14,13 +14,18 @@ function Header() {
 			<div className='Navigation'>
 				<div className='navbar'>
 					<Link className='innerLink' to='/homepage'>
-						{' '}
-						Home{' '}
+						Home
 					</Link>
-					<Link className='innerLink' to='/about'>
-						{' '}
-						About{' '}
+					<Link className='innerLink' to='/About'>
+						About
 					</Link>
+                    <Link className='innerLink' to='/MainDisplay'>
+                        Weather
+                    </Link>
+                    <Link className='innerLink' to='/Inspiration'>
+                        Inspiration
+                    </Link>
+
 				</div>
 			</div>
 		</div>

@@ -84,25 +84,116 @@
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  /* background-image: url("/Users/jules/Desktop/seir/unit2/kronos-weather/src/useables/Homepage.jpg"); */
+  background-image: url("/Users/jules/Desktop/seir/unit2/kronos-weather/src/useables/Homepage.jpg");
   background-size: cover;
 
 }
-.forecast {
-  display: inline-block;
-  background-color: #2d4d55;
-  border-color: black;
-  justify-content: center;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-right: 10px;
-  padding-left: 10px;
-  border-radius: 10%;
 
+.welcomeTitle {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  color: #070a0a;
+  margin-top: 200px;
+  padding: 10px;
+  font-size: 60px;
+}
+
+.mainButton {
+  font-family: 'Roboto Mono', monospace;
+  text-shadow: 2px 2px rgb(5, 32, 56);
+  padding: 10px;
+  margin: -100px;
+}
+
+:hover#button {
+  background-color: rgba(100, 116, 122);
+}
+
+.aboutText {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url('./useables/AboutImg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.aboutTitle {
+  margin: 40px;
+  padding: 20px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 800;
+  color: rgb(23, 48, 54);
+}
+
+.paragraphs {
+  display: grid;
+  height: 480px;
+  background-color: rgb(146, 166, 185, .40);
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+}
+
+.paragraph {
+  font-family: 'Roboto Mono', cursive;
+  color: rgb(190, 202, 202);
+  letter-spacing: 1px;
+  font-weight: 800;
+  padding: 20px;
+  margin: 40px;
+}
+
+#first-section {
+  padding: 40px;
+  height: 400px;
+  justify-content: center;
+  text-align: center;
+  display: inline-block;
+  grid-column: 1;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-color: rgba(33, 20, 46, 0.60);
+  border-radius: 5%;
+}
+#second-section {
+  display: inline-block;
+  grid-column: 2;
+  grid-row: 2;
+  background-color: rgba(33, 20, 46, 0.60);
+  border-radius: 5%;
+}
+#third-section {
+  padding: 30px;
+  display: inline-block;
+  grid-column: 2;
+  grid-row: 1;
+  background-color: rgba(33, 20, 46, 0.60);
+  border-radius: 5%;
+}
+.LoremList {
+  list-style: lower-greek;
+  text-align: center;
+}
+
+
+.homeDisplayed {
+  background-image: url('./useables/Homepage.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+.forecast {
+
+  display: inline-block;
+  justify-content: center;
+  width: 100%;
+  padding: 40px;
 }
 
 .form {
+  display: inline-block;
   align-content: center;
+  width: 300px;
   justify-content: center;
   padding: 20px;
 }
@@ -110,42 +201,68 @@
 #weatherButton {
   height: 60px;
   width: 150px;
+  text-align: center;
+  margin: 20px;
   background-color: #8ca5ac;
   position: relative;
 }
 
-.ForecastDisplay {
-  display: inline-block;
-  justify-content: center;
-  padding: 40px;
-  
+:hover#weatherButton {
+  background-color: rgba(100, 116, 122, .80);
 }
 
-.data {
-  padding: 10px;
+.ForecastDisplay {
+  position: relative;
+  margin-top: 60px;
+  width: 100%;
+  height: 600px;
+  background-color: rgba(100, 116, 122, 0.60);
   display: inline-block;
-  background-color: rgb(223, 250, 246);
+  justify-content: center;
+}
+
+.displayDay {
+  position: relative;
+  align-content: center;
+  margin-top: 42px;
+  margin-right: 20px;
+  margin-left: 20px;
+  display: inline-block;
+  background-color: rgb(223, 250, 246, .60);
   height: 350px;
-  width: 200px;
+  width: 250px;
   border-radius: 5%;
 }
+
+
 .titleForecast {
+  padding-top: 20px;
   font-family: 'Kalam', cursive;
-  color: black;
+  color: rgb(168, 192, 191);
+  font-weight: 500;
+  letter-spacing: 2px;
   font-size: 35px;
 }
 
 
 .FormForecast {
+  position: relative;
   display: inline-block;
   padding: 50px;
-  width: 400px;
-  height: 60px;
-
+  width: 800px;
+  height: 250px;
+  margin: 20px;
 }
+
+#cloudImg {
+  width: 100px;
+  height: 80px;
+}
+
 .title {
   font-family: 'Kalam', cursive;
-  color: aliceblue;
+  font-weight: bold;
+  color: rgb(5, 32, 56);
   font-size: 35px;
 }
 .city {
@@ -171,4 +288,110 @@
 .date {
   color: rgb(18, 39, 56);
   padding: 20px;
+}
+
+
+.QuoteBox {
+  display: inline-block;
+  margin: 0 auto;
+  background-image: url('./useables/Random.jpg');
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.FaveQuote {
+  margin: 40px;
+  position: relative;
+  display: inline-grid;
+  grid-template-columns: 70% 50%;
+  grid-template-rows: 50% 20%;
+  border-radius: 3%;
+  width: 1500px;
+  height: 500px;
+  background-color: rgb(91, 103, 107, .70);
+  background-size: 100%;
+}
+
+.FaQuote {
+  font-family: 'Kalam', cursive;
+  font-weight: bold;
+  color: #cddbd8;
+  margin: 40px;
+  padding: 20px;
+  display: grid;
+  font-size: 40px;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.FaAuthorName {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  text-shadow: 2px 1px rgba(7, 34, 30, 0.6);
+  color: rgb(5, 32, 56);
+  margin: 100px;
+  padding: 20px;
+  display: block;
+  font-size: 30px;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#Jules {
+  margin: 70px;
+  align-content: center;
+  justify-content: center;
+  grid-column: 2;
+  grid-row: span 2/3;
+  border-radius: 60%;
+  width: 300px;
+  height: 350px;
+}
+
+.clicker {
+  position: relative;
+  height: 60px;
+}
+
+#quoteBtn {
+  position: relative;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 800;
+  color:rgb(228, 231, 231);
+  background-color: rgb(5, 32, 56);
+}
+
+:hover#quoteBtn {
+  background-color: rgba(100, 116, 122);
+}
+
+.inspiration {
+  border-radius: 3%;
+  margin: 40px;
+  display: inline-block;
+  width: 600px;
+  height: 250px;
+  background-color: rgb(91, 103, 107, .60);
+  background-size: 100%;
+}
+
+.quote {
+  margin-top: 30px;
+  font-family: 'Kalam', cursive;
+  font-weight: bold;
+  color: #cddbd8;
+  display: grid;
+  font-size: 40px;
+}
+
+.authorName {
+  margin: 30px;
+  font-family: 'Roboto Mono', monospace;
+  text-shadow: 2px 1px rgba(19, 49, 45, 0.6);
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  display: block;
+  font-size: 30px;
 }

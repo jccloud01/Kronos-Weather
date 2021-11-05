@@ -1,6 +1,8 @@
 import './App.css';
 import { useState } from 'react';
-import iconDisplay from './iconDisplay';
+import iconData from './iconData';
+import cloudImg from './icons/cloudImg.png'
+
 
 function Weather() {
 	const API_KEY = 'cd09d8ac9a0ef1574b474e68f204b38a';
@@ -19,7 +21,6 @@ function Weather() {
 		e.preventDefault();
 		setZipCode(e.target.value);
 	};
-
 	
 	const weatherInfo = (e) => {
 		e.preventDefault();
@@ -38,28 +39,28 @@ function Weather() {
 					weather: data.list[2].weather[0].description,
 
 					date2: data.list[10].dt_txt,
-					id2: data.list[2].weather[0].id,
+					id2: data.list[10].weather[0].id,
 					temp2: data.list[10].main.temp,
 					weather2: data.list[10].weather[0].description,
 
 					date3: data.list[18].dt_txt,
-					id3: data.list[2].weather[0].id,
+					id3: data.list[18].weather[0].id,
 					temp3: data.list[18].main.temp,
 					weather3: data.list[18].weather[0].description,
 
 					date4: data.list[26].dt_txt,
-					id4: data.list[2].weather[0].id,
+					id4: data.list[26].weather[0].id,
 					temp4: data.list[26].main.temp,
 					weather4: data.list[26].weather[0].description,
 
 					date5: data.list[34].dt_txt,
-					id5: data.list[2].weather[0].id,
+					id5: data.list[34].weather[0].id,
 					temp5: data.list[34].main.temp,
 					weather5: data.list[34].weather[0].description,
 				});
 		console.log(zipCodeWeather);
 		})
-	}
+	} 
 
 
 		return (
@@ -75,7 +76,6 @@ function Weather() {
 							name='city'
 							placeholder='Enter a ZipCode'
 						/>
-						<br />
 						<button id='weatherButton' className='btn btn-primary'>
 							{' '}
 							Search{' '}
@@ -83,43 +83,40 @@ function Weather() {
 					</form>
 				</div>
 				<div className='ForecastDisplay'>
-					<div className='forecast'>
-						<h1 className='titleForecast'> Weather Forecast </h1>
-						<h1 className='titleForecast'> Forecast for... {zipCodeWeather.city} </h1>
-						<div className='data'>
-							<h1 className='date'> {zipCodeWeather.date} </h1>
-							
-
-							<h2 className='temperature'> {zipCodeWeather.temp} </h2>
-							<h2 className='weather'> {zipCodeWeather.weather} </h2>
-						</div>
-						<div className='data'>
-							<h1 className='date'> {zipCodeWeather.date2} </h1>
-							<h2 className='temperature'> {zipCodeWeather.temp2} </h2>
-							<h2 className='weather'> {zipCodeWeather.weather2} </h2>
-						</div>
-						<div className='data'>
-							<h1 className='date'> {zipCodeWeather.date3} </h1>
-
-
-							<h2 className='temperature'> {zipCodeWeather.temp3} </h2>
-							<h2 className='weather'> {zipCodeWeather.weather3} </h2>
-						</div>
-						<div className='data'>
-							<h1 className='date'> {zipCodeWeather.date4} </h1>
-
-							<img src={iconDisplay.icon} alt={iconDisplay.alt} />
-
-							<h2 className='temperature'> {zipCodeWeather.temp4} </h2>
-							<h2 className='weather'> {zipCodeWeather.weather4} </h2>
-						</div>
-						<div className='data'>
-							<h1 className='date'> {zipCodeWeather.date5} </h1>
-
-
-							<h2 className='temperature'> {zipCodeWeather.temp5} </h2>
-							<h2 className='weather'> {zipCodeWeather.weather5} </h2>
-						</div>
+					<h1 className='titleForecast'> Weather Forecast </h1>
+					<h1 className='titleForecast'>
+						{' '}
+						Forecast for... {zipCodeWeather.city}{' '}
+					</h1>
+					<div className='displayDay' id={zipCodeWeather.id}>
+						<img src={cloudImg} alt='cloud' id='cloudImg' />
+						<h1 className='date'> {zipCodeWeather.date} </h1>
+						<h2 className='temperature'> {zipCodeWeather.temp} </h2>
+						<h2 className='weather'> {zipCodeWeather.weather} </h2>
+					</div>
+					<div className='displayDay' id={zipCodeWeather.id2}>
+						<img src={cloudImg} alt='cloud' id='cloudImg' />
+						<h1 className='date'> {zipCodeWeather.date2} </h1>
+						<h2 className='temperature'> {zipCodeWeather.temp2} </h2>
+						<h2 className='weather'> {zipCodeWeather.weather2} </h2>
+					</div>
+					<div className='displayDay' id={zipCodeWeather.id3}>
+						<img src={cloudImg} alt='cloud' id='cloudImg' />
+						<h1 className='date'> {zipCodeWeather.date3} </h1>
+						<h2 className='temperature'> {zipCodeWeather.temp3} </h2>
+						<h2 className='weather'> {zipCodeWeather.weather3} </h2>
+					</div>
+					<div className='displayDay' id={zipCodeWeather.id4}>
+						<img src={cloudImg} alt='cloud' id='cloudImg' />
+						<h1 className='date'> {zipCodeWeather.date4} </h1>
+						<h2 className='temperature'> {zipCodeWeather.temp4} </h2>
+						<h2 className='weather'> {zipCodeWeather.weather4} </h2>
+					</div>
+					<div className='displayDay' id={zipCodeWeather.id5}>
+						<img src={cloudImg} alt='cloud' id='cloudImg' />
+						<h1 className='date'> {zipCodeWeather.date5} </h1>
+						<h2 className='temperature'> {zipCodeWeather.temp5} </h2>
+						<h2 className='weather'> {zipCodeWeather.weather5} </h2>
 					</div>
 				</div>
 			</div>
