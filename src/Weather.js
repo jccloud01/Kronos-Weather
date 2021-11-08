@@ -24,7 +24,7 @@ function Weather() {
 	const weatherInfo = (e) => {
 		e.preventDefault();
 		fetch(
-			'http://api.openweathermap.org/data/2.5/forecast?zip=' + zipCode + '&units=imperial&appid=' + API_KEY
+			'https://api.openweathermap.org/data/2.5/forecast?zip=' + zipCode + '&units=imperial&appid=' + API_KEY
 		)
 			.then((response) => response.json())
 			.then((data) => {
