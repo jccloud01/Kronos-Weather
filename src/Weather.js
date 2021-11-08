@@ -1,10 +1,10 @@
 import './App.css';
+import API_KEY from './ApiKey'
 import { useState } from 'react';
 import cloudImg from './icons/cloudImg.png'
 
 
 function Weather() {
-	const API_KEY = 'cd09d8ac9a0ef1574b474e68f204b38a';
 
 	const [zipCodeWeather, setZipCodeWeather] = useState({
 		city: '',
